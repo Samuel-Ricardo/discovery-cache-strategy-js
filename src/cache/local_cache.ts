@@ -39,3 +39,7 @@ function getExpirationTime(): Date {
     now.setSeconds(now.getSeconds() + TIME_TO_LEAVE); 
     return now;
 }
+
+export const removeExpiredKeys = () => Array.from(CACHE.keys())
+                                            .filter(key => isExpired(key))
+                                            .forEach(key => remove(key))
