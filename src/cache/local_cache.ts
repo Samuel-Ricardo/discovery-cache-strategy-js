@@ -1,4 +1,5 @@
 import { ICache } from "@type"
+import { TIME_TO_LEAVE } from "config/secret"
 
 const CACHE = new Map<string, ICache<any>>()
 
@@ -31,4 +32,10 @@ export const isExpired = (key: string) => {
     if (expired) remove(key)
 
     return expired;
+}
+
+function getExpirationTime(): Date {
+    const now = new Date()
+    now.setSeconds(now.getSeconds() + TIME_TO_LEAVE); 
+    return now;
 }
