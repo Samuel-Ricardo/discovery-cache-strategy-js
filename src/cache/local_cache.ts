@@ -8,7 +8,7 @@ const CACHE = new Map<string, ICache<any>>()
 export const save = (key: string, value: any, override?: boolean) => {
     
     const cache:ICache<any> = {
-        value
+        value,
         expire: getExpirationTime()
     }
 
