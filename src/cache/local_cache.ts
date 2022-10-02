@@ -7,3 +7,5 @@ export const isExpired = (key: string) => {
 
     return expired;
 }
+
+export const exists = (key: string) =>  !isExpired(key) && CACHE.has(key) 
