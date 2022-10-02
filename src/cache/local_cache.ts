@@ -1,5 +1,9 @@
 const CACHE = new Map<string, any>()
 
+
+export const get = (key: string) => isAble(key)? CACHE.get(key) : undefined 
+
+
 export const exists = (key: string) => CACHE.has(key) 
 
 export const remove = (key: string) => CACHE.delete(key)
