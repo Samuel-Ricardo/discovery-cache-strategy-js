@@ -4,7 +4,7 @@ const CACHE = new Map<string, ICache<any>>()
 
 //const sync = (cache:Map<string, ICache<any>>) => CACHE = cache;
 
-export const save = (key: string, value: any, override: boolean) => {
+export const save = (key: string, value: any, override?: boolean) => {
     
     const cache:ICache<any> = {
         value
