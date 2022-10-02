@@ -11,3 +11,5 @@ export const isExpired = (key: string) => {
 export const exists = (key: string) => CACHE.has(key) 
 
 export const remove = (key: string) => CACHE.delete(key)
+
+export const isAble = (key: string) => !isExpired(key) && exists(key)
