@@ -1,6 +1,7 @@
 {
   "dependencies": {
 
+    "@types/node": "^18.7.23",
     "@types/redis": "^4.0.11",
     "axios": "^0.27.2",
     "express": "^4.18.1",
