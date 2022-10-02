@@ -1,8 +1,23 @@
-const CACHE = new Map<string, any>()
+import { ICache } from "@type"
+
+const CACHE = new Map<string, ICache<any>>()
+
+//const sync = (cache:Map<string, ICache<any>>) => CACHE = cache;
+
+export const save = (key: string, value: any, override: boolean) => {
+    
+    const cache:ICache<any> = {
+        value
+        expire: getExpirationTime()
+    }
+
+    if(exists(key)) override? CACHE.set(key, cache) : undefined
+    
+    CACHE.set(key, cache);
+}
 
 
 export const get = (key: string) => isAble(key)? CACHE.get(key) : undefined 
-
 
 export const exists = (key: string) => CACHE.has(key) 
 
