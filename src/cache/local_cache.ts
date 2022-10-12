@@ -12,13 +12,13 @@ export const save = (key: string, value: any, override?: boolean) => {
         expire: getExpirationTime()
     }
 
-    if(exists(key)) override? CACHE.set(key, cache) : undefined
+    if(exists(key)) override? CACHE.set(key, cache) : null
     
     CACHE.set(key, cache);
 }
 
 
-export const get = (key: string) => isAble(key)? CACHE.get(key) : undefined 
+export const get = (key: string) => isAble(key)? CACHE.get(key) : null 
 
 export const exists = (key: string) => CACHE.has(key) 
 
@@ -27,10 +27,10 @@ export const remove = (key: string) => CACHE.delete(key)
 export const isAble = (key: string) => !isExpired(key) && exists(key)
 
 export const isExpired = (key: string) => {
-    if(CACHE.get(key) === undefined) return false;
-    
-    const expired = new Date() > CACHE.get(key).expire;
+    const data = CACHE.get(key);
+    if(!data) return false;
 
+    const expired = new Date() > data.expire
     if (expired) remove(key)
 
     return expired;
