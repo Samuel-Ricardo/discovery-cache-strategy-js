@@ -3,7 +3,7 @@ import { ICep } from "@type"
 import { VIA_CEP_URI } from "../config/secret"
 
 export const findByCep = async (cep:string) => {
-    console.info(`Fiding CEP data from external API - [${cep}]`)
+    console.info(`Fiding CEP data from external API | CEP - [${cep}] |`)
 
     let cep_result:ICep | null = null;
 
