@@ -12,7 +12,7 @@ export const save = (key: string, value: any, override?: boolean) => {
         expire: getExpirationTime()
     }
 
-    if(exists(key)) override? CACHE.set(key, cache) : null
+    if(exists(key)) return override? CACHE.set(key, cache) : null
     
     CACHE.set(key, cache);
 }
