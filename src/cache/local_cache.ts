@@ -28,7 +28,7 @@ export const isAble = (key: string) => !isExpired(key) && exists(key)
 
 export const isExpired = (key: string) => {
     const data = CACHE.get(key);
-    if(!data) return false;
+    if(!data) return true;
 
     const expired = new Date() > data.expire
     if (expired) remove(key)
