@@ -1,10 +1,10 @@
 import { ICacheItem } from "./cache_item";
 
- export interface ICache<T> {
+ export interface ICacheActions<T> {
 
   save: (key: string, value: T, override?: boolean) => any
 
-  get: (key: string) => ICache | null 
+  get: (key: string) => ICacheActions | null 
 
   exists: (key: string) => boolean 
 
