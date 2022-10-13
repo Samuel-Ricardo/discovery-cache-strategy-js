@@ -6,6 +6,8 @@ import { ICacheItem } from "./cache_item";
 
   get: (key: string) => ICacheActions | null 
 
+  getAll: () => Map<string, ICacheItem<T>>
+
   exists: (key: string) => boolean 
 
   remove: (key: string) => boolean
