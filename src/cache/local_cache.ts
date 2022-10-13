@@ -1,4 +1,4 @@
-import { ICacheItem, ICache } from "@type"
+import { ICacheItem, ICacheActions } from "@type"
 import { TIME_TO_LEAVE } from "config/secret"
 
 export const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
@@ -47,3 +47,13 @@ function getExpirationTime(): Date {
                                             .forEach(key => remove(key))
  
                                             
+ export const local_cache_actions:ICacheActions<any> = {
+    save,
+    get,
+    exists,
+    getExpirationTime,
+    isAble,
+    isExpired,
+    remove,
+    removeExpiredKeys
+}
