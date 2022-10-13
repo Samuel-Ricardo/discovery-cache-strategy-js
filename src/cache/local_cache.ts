@@ -1,7 +1,7 @@
 import { ICacheItem, ICacheActions } from "@type"
 import { TIME_TO_LEAVE } from "config/secret"
 
-export const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
+const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
 
 //const sync = (cache:Map<string, ICache<any>>) => CACHE = cache;
 
