@@ -1,4 +1,4 @@
-export interface ICache<V> {
+export interface ICacheItem<V> {
     value: V,
     expire: Date
 }

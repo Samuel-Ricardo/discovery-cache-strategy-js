@@ -1,3 +1,3 @@
 export * from './response'
 export * from './cep'
-export * from './cache'
+export * from './cache_item'

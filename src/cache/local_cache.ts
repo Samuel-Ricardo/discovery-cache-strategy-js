@@ -1,13 +1,13 @@
-import { ICache } from "@type"
+import { ICacheItem } from "@type"
 import { TIME_TO_LEAVE } from "config/secret"
 
-const CACHE = new Map<string, ICache<any>>()
+const CACHE = new Map<string, ICacheItem<any>>()
 
 //const sync = (cache:Map<string, ICache<any>>) => CACHE = cache;
 
 export const save = (key: string, value: any, override?: boolean) => {
     
-    const cache:ICache<any> = {
+    const cache:ICacheItem<any> = {
         value,
         expire: getExpirationTime()
     }
