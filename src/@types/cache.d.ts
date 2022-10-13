@@ -1,10 +1,8 @@
 import { ICacheItem } from "./cache_item";
 
- interface ICache<T> {
+ export interface ICache<T> {
 
-  CACHE: Map<string, ICacheItem<T>>
-
-  save: (key: string, value: T, override?: boolean) => void | null | ICacheItem<T>;
+  save: (key: string, value: T, override?: boolean) => any
 
   get: (key: string) => ICache | null 
 
