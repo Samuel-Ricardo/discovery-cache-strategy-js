@@ -20,6 +20,8 @@ export const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
 
  const get = (key: string) => isAble(key)? LOCAL_CACHE.get(key) : null 
 
+ const getAll = () => LOCAL_CACHE;
+
  const exists = (key: string) => LOCAL_CACHE.has(key) 
 
  const remove = (key: string) => LOCAL_CACHE.delete(key)
@@ -50,6 +52,7 @@ function getExpirationTime(): Date {
  export const local_cache_actions:ICacheActions<any> = {
     save,
     get,
+    getAll,
     exists,
     getExpirationTime,
     isAble,
