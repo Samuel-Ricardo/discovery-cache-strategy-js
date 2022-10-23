@@ -9,3 +9,8 @@ export const save = async (key: any, value: any) => {
 }
 
 export const get = async (key: any) => await redis.get(key);
+
+export const getAll = async () => {
+    try{return await redis.hGetAll('cache')}
+    catch(error){ console.log("Error on try to get all cache items") }
+}
