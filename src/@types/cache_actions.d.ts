@@ -4,15 +4,15 @@ import { ICacheItem } from "./cache_item";
 
   save: (key: string, value: T, override?: boolean) => any
 
-  get: (key: string) => ICacheActions | null 
+  get: (key: string) => ICacheActions | any 
 
-  getAll: () => Map<string, ICacheItem<T>>
+  getAll?: () => Map<string, ICacheItem<T>> | Promise<any>[]
 
-  exists: (key: string) => boolean 
+  exists: (key: string) => boolean | Promise <boolean> 
 
-  remove: (key: string) => boolean
+  remove: (key: string) => boolean | Promise <boolean>
 
-  isAble: (key: string) => boolean
+  isAble: (key: string) => boolean | Promise <boolean>
 
   isExpired: (key: string) => boolean
 
