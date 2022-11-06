@@ -14,3 +14,17 @@ export const getAll = async () => {
     try{return await (await redis.keys("*")).map(key => redis.get(key))}
     catch(error){ console.log("Error on try to get all cache items") }
 }
+
+
+export const remove = async (key: any) => 
+{
+    try{ 
+        await redis.del(key)
+        return true
+    }
+    
+    catch(error){
+        console.log("Error on try to remove")
+        console.error(error)    
+    }
+}
