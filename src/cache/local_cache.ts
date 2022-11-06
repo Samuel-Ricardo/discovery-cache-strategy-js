@@ -1,5 +1,6 @@
 import { ICacheItem, ICacheActions } from "@type"
 import { TIME_TO_LEAVE } from "config/secret"
+import { getExpirationTime } from "utils/times"
 
 const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
 
@@ -36,12 +37,6 @@ const LOCAL_CACHE = new Map<string, ICacheItem<any>>()
     if (expired) remove(key)
 
     return expired;
-}
-
-function getExpirationTime(): Date {
-    const now = new Date()
-    now.setSeconds(now.getSeconds() + TIME_TO_LEAVE); 
-    return now;
 }
 
  const removeExpiredKeys = () => Array.from(LOCAL_CACHE.keys())
